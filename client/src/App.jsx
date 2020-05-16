@@ -4,7 +4,7 @@ import ContextDemo from './components/ContextDemo';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Home from './components/Home'
 import City from './components/City'
-import Zipcode from './components/Zipcode'
+
 
 import './App.css';
 
@@ -25,7 +25,6 @@ const App = () => {
         <AppContextProvider>
           <Route exact path='/' component={Home} />
           <Route exact path='/weather/:city' component={City} />
-          <Route exact path='/zipcode/:zipcode' component={Zipcode} />
         </AppContextProvider>
       </Switch>
     </Router>
