@@ -6,7 +6,7 @@ const axios = require('axios')
 const path = require('path');
 const app = express();
 require('dotenv').config();
-// const weatherRoutes = require('./routes/weather');
+
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-//app.use('/weather', weatherRoutes);
+
 
 // JUST FOR DEMO PURPOSES, PUT YOUR ACTUAL API CODE HERE
 app.get('/api/demo', (request, response) => {
@@ -33,11 +33,6 @@ app.get('/city/:city', async (req, res) => {
   res.send(data);
 });
 
-// app.get('/zip/:zipCode', async (req, res) => {
-//   // key=${process.env.API_KEY}
-//   let { data } = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=${req.params.zipCode}&days=3`);
-//   res.send(data);
-// });
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {

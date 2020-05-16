@@ -14,7 +14,7 @@ const City = (props) => {
     console.log(cityData)
     return (
         <div>
-            <h1>THis is the city page</h1>
+            <h1>This is the weather results page</h1>
             <h1>Current temparature for {city} is {cityData && cityData.temp_f}</h1>
         </div>
 
