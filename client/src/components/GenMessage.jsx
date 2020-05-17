@@ -8,31 +8,27 @@ const GenMessage = (props) => {
     'Get your sunglasses and the sunscreen! Today is a good day to go to the beach.',
     'When leaving the house, it may be a good idea to take the umbrella.'
   ]);
+  const [message, setMessage] = useState("Test")
 
   //I have to connect the condition data to the array
   //and print this value
-  const weatherCond = 'snowing';
-  const message = () => {
-    if (weatherCond === 'Sunny day') {
-      console.log(arrayMessage[1]);
-    } else if (weatherCond === 'raining day') {
-      console.log(arrayMessage[2]);
-    } else if (weatherCond === 'snowing') {
-      console.log(arrayMessage[0]);
-    }
-  };
 
-  // useEffect(message(), []);
+  useEffect(()=>{
+    console.log("am i working?")
+    if (props.info.condition.text === 'Sunny') {
+      setMessage(arrayMessage[1]);
+    } else if (props.info.condition.text === 'Partly cloudy') {
+      setMessage(arrayMessage[2]);
+      console.log("am i getting in here?")
+    } else if (props.info.condition.text === 'snowing') {
+      setMessage(arrayMessage[0]);
+    }
+  }, []);
 
   return (
     <Container>
-      {props.info ? (
-        <h1>{props.info.condition.text}</h1>
-      ) : (
-        <h1>Nothing yet!</h1>
-      )}
-
-      <h2>The message goes here! {arrayMessage[0]} </h2>
+      <h1>{props.info.condition.text}</h1>
+      <h2>The message goes here! {message} </h2>
     </Container>
   );
 };

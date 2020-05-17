@@ -21,8 +21,15 @@ const City = (props) => {
       <h1>
         Current temperature for {city} is {cityData && cityData.temp_f} °F
       </h1>
-      <GenMessage info={cityData} />
-      <Weather5days />
+      {
+        cityData && (
+          <>
+            <GenMessage info={cityData} />
+            <Weather5days />
+          </>
+        )
+      }
+      
     </div>
   );
 };
