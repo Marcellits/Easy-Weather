@@ -10,6 +10,7 @@ const Home = (props) => {
     }
 
     const handleSearch = (e) => {
+        console.log("hi!")
         e.preventDefault()
         props.history.push(`/weather/${searchTerm}`)
     }
@@ -18,7 +19,7 @@ const Home = (props) => {
             <h1>This is the Home page</h1>
             <form onSubmit={handleSearch}>
                 <input type="text" placeholder="Search for a city" onChange={handleChange}/>
-                <Button>Search</Button>
+                <Button type="submit">Search</Button>
             </form>
         </div>
     )

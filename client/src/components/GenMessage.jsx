@@ -16,10 +16,10 @@ const GenMessage = (props) => {
   useEffect(()=>{
     console.log("am i working?")
     if (props.info.condition.text === 'Sunny') {
-      setMessage(arrayMessage[1]);
+      
     } else if (props.info.condition.text === 'Partly cloudy') {
       setMessage(arrayMessage[2]);
-      console.log("am i getting in here?")
+      
     } else if (props.info.condition.text === 'snowing') {
       setMessage(arrayMessage[0]);
     }
@@ -28,7 +28,7 @@ const GenMessage = (props) => {
   return (
     <Container>
       <h1>{props.info.condition.text}</h1>
-      <h2>The message goes here! {message} </h2>
+      <h2>{message} </h2>
     </Container>
   );
 };

@@ -16,15 +16,17 @@ const WeatherDays = (props) => {
     //     .then(data => setDaysData(data.forecast.))
     // }, [])
     
+
+
    
     return (
         <Container>
             <Row>
-                <Col>day 1</Col>
-                <Col>day 2</Col>
-                <Col>day 3</Col>
-                <Col>day 4</Col>
-                <Col>day 5</Col>     
+                {props.forecast.forecastday.map((item) => {
+                    return (
+                    <Col> min: {item.day.mintemp_f} °F |  max: {item.day.maxtemp_f} °F</Col>
+                    )
+                })}               
             </Row>
         </Container>
     )
