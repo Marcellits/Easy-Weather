@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
+import Weather5days from './Weather5days'
+import GenMessage from './GenMessage'
 
 const City = (props) => {
     const [cityData, setCityData] = useState(null)
@@ -15,7 +17,10 @@ const City = (props) => {
     return (
         <div>
             <h1>This is the weather results page</h1>
-            <h1>Current temparature for {city} is {cityData && cityData.temp_f}</h1>
+            <h1>Current temperature for {city} is {cityData && cityData.temp_f} °F</h1>
+        <GenMessage />
+        <Weather5days/>
+        
         </div>
 
     )

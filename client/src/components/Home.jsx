@@ -18,7 +18,7 @@ const Home = (props) => {
             <h1>This is the Home page</h1>
             <form onSubmit={handleSearch}>
                 <input type="text" placeholder="Search for a city" onChange={handleChange}/>
-                <button>Search</button>
+                <Button>Search</Button>
             </form>
         </div>
     )

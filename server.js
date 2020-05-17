@@ -29,7 +29,9 @@ app.get('/api/demo', (request, response) => {
 
 app.get('/city/:city', async (req, res) => {
   // key=${process.env.API_KEY}
-  let { data } = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=${req.params.city}&days=5`);
+  let { data } = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.API_KEY}&q=${req.params.city}&days=5`);
+
+ 
   res.send(data);
 });
 
