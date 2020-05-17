@@ -16,7 +16,7 @@ const GenMessage = (props) => {
   useEffect(()=>{
     console.log("am i working?")
     if (props.info.condition.text === 'Sunny') {
-      
+      setMessage(arrayMessage[1]);
     } else if (props.info.condition.text === 'Partly cloudy') {
       setMessage(arrayMessage[2]);
       
