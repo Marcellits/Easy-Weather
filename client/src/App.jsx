@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { AppContextProvider } from './context/AppContext';
 import ContextDemo from './components/ContextDemo';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import Home from './components/Home'
-import City from './components/City'
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import City from './components/City';
 
 import './App.css';
 
@@ -23,8 +22,8 @@ const App = () => {
     <Router>
       <Switch>
         <AppContextProvider>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/weather/:city' component={City} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/weather/:city" component={City} />
         </AppContextProvider>
       </Switch>
     </Router>
