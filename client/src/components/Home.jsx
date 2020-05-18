@@ -15,7 +15,7 @@ const Home = (props) => {
     }
     return (
         <div>
-            <h1>This is the Home page</h1>
+            <h1>Easy Weather</h1>
             <form onSubmit={handleSearch}>
                 <input type="text" placeholder="Search for a city" onChange={handleChange}/>
                 <button>Search</button>
