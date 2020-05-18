@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Weather5days from './Weather5days';
 import GenMessage from './GenMessage';
-
+import WeatherConverter from './WeatherConverter'
 const City = (props) => {
   const [cityData, setCityData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
@@ -21,9 +21,8 @@ const City = (props) => {
 
   return (
     <div>
-      <h1>This is the weather results page</h1>
       <h2>
-        Current temperature for {city} is {cityData && cityData.temp_f} °F
+        Today's Forecast in {city} is {cityData && cityData.temp_f} <WeatherConverter info={cityData}/>
       </h2>
       {
         cityData && forecastData && (
