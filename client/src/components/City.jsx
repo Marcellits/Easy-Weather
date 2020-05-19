@@ -19,9 +19,7 @@ const City = (props) => {
       });
   }, []);
 
-  console.log('what is forecastdata', forecastData);
-
-  return (
+    return (
     <div>
       <h1>This is the weather results page</h1>
       <h2>
