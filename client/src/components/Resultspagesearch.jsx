@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 
 
 
+
 const Resultspagesearch = (props) => {
     const [searchTerm, setSearchTerm] = useState(null);
 
@@ -17,12 +18,12 @@ const Resultspagesearch = (props) => {
       };
     return ( 
     <form onSubmit={handleSearch}>
-        <input
+        <input style={{width: '40vw', borderRadius: '15px'}}
           type="text"
-          placeholder="Search for a city"
+          placeholder=" Search for a City, Address, or Zip Code"
           onChange={handleChange}
         />
-        <Button type="submit">Search</Button>   
+        <Button class="button" type="submit" style={{marginLeft: '2vw', borderRadius: '15px'}}>Search</Button>   
       </form>)
 
 }
