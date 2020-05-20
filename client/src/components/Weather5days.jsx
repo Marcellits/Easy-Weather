@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {Container, Row, Col, Card } from 'react-bootstrap';
-import Moment from 'moment';
+// import Moment from 'moment';
 
 const Weather5Days = (props) => {
     

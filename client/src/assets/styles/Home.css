@@ -1,0 +1,10 @@
+.welcome-message {
+    color: rgb(255, 255, 255)
+}
+
+body {
+    background: url('../images/beautiful-clouds-cloudy-dramatic-209831.jpg') center center no-repeat fixed;
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+
+}

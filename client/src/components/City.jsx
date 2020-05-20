@@ -4,6 +4,8 @@ import Weather5days from './Weather5days';
 import GenMessage from './GenMessage';
 import CurrentWeatherDetails from './CurrentWeatherDetails';
 import WeatherConverter from './WeatherConverter';
+import Resultspagesearch from './Resultspagesearch';
+
 
 const City = (props) => {
   const [cityData, setCityData] = useState(null);
@@ -17,18 +19,17 @@ const City = (props) => {
         setCityData(data.current);
         setForecastData(data.forecast);
       });
-  }, []);
+  }, [city]);
 
     return (
     <div>
-      <h1>This is the weather results page</h1>
+      <Resultspagesearch history={props.history}/>
       <h2>
-        Current temperature for {city} is {cityData && cityData.temp_f} <WeatherConverter info = {cityData} />
+        Current temperature for {city} is {cityData && <WeatherConverter fahrenheit={cityData.temp_f} celcius={cityData.temp_c} />} 
         {forecastData && (
           <span>
             <CurrentWeatherDetails current={cityData} forecast={forecastData} />
           </span>
-        
         )}
       </h2>
       {cityData && forecastData && (

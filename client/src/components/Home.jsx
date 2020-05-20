@@ -1,30 +1,22 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import '../assets/styles/Home.css';
+import logo from '../assets/images/EasyWeatherLogo&Icon.png';
+import Resultspagesearch from './Resultspagesearch';
+
+
 
 const Home = (props) => {
-  const [searchTerm, setSearchTerm] = useState(null);
-
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleSearch = (e) => {
-    console.log('hi!');
-    e.preventDefault();
-    props.history.push(`/weather/${searchTerm}`);
-  };
+  
   return (
-    <div>
-      <h1>This is the Home page</h1>
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Search for a city"
-          onChange={handleChange}
-        />
-        <Button type="submit">Search</Button>
-      </form>
-    </div>
+    <>
+      <div class="welcome-message">
+        <h1>Welcome, Let's check the weather.</h1>
+        <Resultspagesearch history={props.history}/>
+
+      </div>
+      <img src={logo} atl="website logo"/>
+    </>
   );
 };
 

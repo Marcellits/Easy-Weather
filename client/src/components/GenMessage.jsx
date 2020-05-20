@@ -1,105 +1,108 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-
-const cloudyConditions = [
+const goodWeather = [
+  'Sunny',
+  'Clear'
+]
+const cloudyWeather = [
   'Cloudy',
   'Overcast',
   'Patchy rain possible'
 ]
-
-
-
+const lightRain = [
+  "Patchy light drizzle",
+  "Light drizzle",
+  "Patchy light rain",
+  "Light rain",
+  "Light rain shower",
+  "Patchy light rain with thunder"
+]
+const moderateRain = [
+  "Moderate rain at times",
+  "Moderate rain",
+  "Heavy rain at times"
+]
+const heavyRain = [
+  "Moderate or heavy rain shower",
+  'Moderate or heavy rain with thunder',
+  "Torrential rain shower",
+  "Heavy rain",
+  "Thundery outbreaks possible",
+  "Heavy freezing drizzle"
+]
+const foggy = [
+  "Mist",
+  "Fog",
+  "Freezing fog"
+]
+const coldCondition =[
+  "Light freezing rain",
+  "Patchy freezing drizzle possible",
+  "Moderate or heavy freezing rain"
+]
+const snow =[
+  "Patchy light snow with thunder",
+  "Patchy snow possible",
+  "Patchy moderate snow",
+  "Light snow",
+  "Patchy light snow",
+  "Blowing snow",
+  "Moderate snow",
+  "Patchy heavy snow",
+  "Light snow showers",
+  "Light snow showers",
+]
+const heavySnow = [
+  "Moderate or heavy snow with thunder",
+  "Blizzard",
+  "Heavy snow",
+  "Ice pellets",
+  "Light showers of ice pellets",
+  "Moderate or heavy showers of ice pellets",
+  "Light sleet showers",
+  "Moderate or heavy sleet",
+  "Moderate or heavy sleet showers",
+  "Patchy sleet possible",
+  "Light sleet"
+]
 const GenMessage = (props) => {
   const [arrayMessage, setArrayMessage] = useState([
-    'Oh, how beautiful blue sky today!',
-    'The sky looks beautiful, don\'t you think!?',
-    'When leaving the house, it might be a good idea to take an umbrella.',
-    'When leaving the house, it might be a good idea to take an umbrella and a coat.',
-    'Did you get your umbrella? Maybe you should check the windshield wiper of your car before driving.',
-    'Not a good time to drive.Be safe!',
-    'Today is cold. It is advisable to put on warm clothing',
-    'Hey! Don\'t you love the snow? Don\'t forget to get the gloves and the winter hat! ',
-    'Wow! I think it\'s better to stay home for now. How about having a hot drink ?'
+    'The sky is clear and sunny. Wear your sunblock and enjoy the Vitamin D!',
+    'The sun is shining above the clouds. Grab your friends and family for some outside activity fun.',
+    'It\'s cloudy and gray today. Consider taking an umbrella in case it drizzles.',
+    'Take an umbrella with you today, and have a plan B if you\'re planning an outdoor activity.',
+    'Take your umbrella and a rain coat when going outside. Your outdoor plants will be well hydrated today.',
+    'When it rains, it pours. Plan ahead and remember to check the windshield wiper of your car before driving.',
+    'Consider staying off the road today until the fog clears. Wear reflective gear if you\'re going for a walk.',
+    'Today is forecasted to be cold and wet. It is advisable to put on warm clothing and wear your rain boots.',
+    'It\'s a snow day. Don\'t forget to grab your gloves and winter hat! Considering warming up with a hot drink before leaving home.',
+    'It\'s better to stay home for now but don\'t worry there\'s always a calm after the storm.'
   ]);
-  
-  
   const [message, setMessage] = useState()
-
   useEffect(()=>{
     let weatherCond = props.info.condition.text;
-    if (weatherCond === 'Sunny'|| weatherCond === 'Clear'
-      ) {
+    if (goodWeather.includes(weatherCond)) {
       setMessage(arrayMessage[0]);
     } else if (weatherCond  === 'Partly cloudy') {
       setMessage(arrayMessage[1]);
-    } else if (cloudyConditions.includes(weatherCond)) {
+    } else if (cloudyWeather.includes(weatherCond)) {
       setMessage(arrayMessage[2]);
-    }else if (
-      weatherCond ==="Patchy light drizzle"
-      || weatherCond === "Light drizzle"
-      || weatherCond === "Patchy light rain"
-      || weatherCond === "Light rain"
-      || weatherCond ==="Light rain shower"
-      || weatherCond === "Patchy light rain with thunder"
-      ){
+    }else if (lightRain.includes(weatherCond)) {
       setMessage(arrayMessage[3]);
-    }else if (
-      weatherCond  === "Moderate rain at times"
-      || weatherCond === "Moderate rain"
-      || weatherCond === "Heavy rain at times"
-      || weatherCond === "Moderate or heavy rain shower"
-      ){
+    }else if (moderateRain.includes(weatherCond)) {
       setMessage(arrayMessage[4]);
-    }else if (
-      weatherCond  === 'Moderate or heavy rain with thunder'
-      || weatherCond === "Torrential rain shower"
-      || weatherCond === "Heavy rain"
-      || weatherCond === "Thundery outbreaks possible"
-      || weatherCond === "Heavy freezing drizzle"
-      ){
+    }else if (heavyRain.includes(weatherCond)) {
       setMessage(arrayMessage[5]);
-    }else if (
-      weatherCond  === "Mist"
-      || weatherCond === "Fog"
-      || weatherCond === "Freezing fog"
-      ){
+    }else if (foggy.includes(weatherCond)) {
       setMessage(arrayMessage[6]);
-    }else if (
-      weatherCond  === "Light freezing rain"
-      || weatherCond === "Patchy freezing drizzle possible"
-      || weatherCond === "Moderate or heavy freezing rain"
-      ){
+    }else if (coldCondition.includes(weatherCond)) {
       setMessage(arrayMessage[7]);
-    }else if (
-      weatherCond  === "Patchy light snow with thunder"
-      || weatherCond === "Patchy snow possible"
-      || weatherCond === "Patchy moderate snow"
-      || weatherCond === "Light snow"
-      || weatherCond === "Patchy light snow"
-      || weatherCond === "Blowing snow"
-      || weatherCond === "Moderate snow"
-      || weatherCond === "Patchy heavy snow"
-      || weatherCond === "Light snow showers"
-      || weatherCond === "Light snow showers"
-      ){
+    }else if (snow.includes(weatherCond)){
       setMessage(arrayMessage[8]);
-    }else if (
-      weatherCond  === "Moderate or heavy snow with thunder"
-      || weatherCond === "Blizzard"
-      || weatherCond === "Heavy snow"
-      || weatherCond === "Ice pellets"
-      || weatherCond === "Light showers of ice pellets"
-      || weatherCond === "Moderate or heavy showers of ice pellets"
-      || weatherCond === "Light sleet showers"
-      || weatherCond === "Moderate or heavy sleet"
-      || weatherCond === "Moderate or heavy sleet showers"
-      || weatherCond === "Patchy sleet possible"
-      || weatherCond === "Light sleet"
-      ){
+    }else if (heavySnow.includes(weatherCond)){
       setMessage(arrayMessage[9]);
     }
   }, []);
-
   return (
     <Container>
       <h1>{props.info.condition.text}</h1>
