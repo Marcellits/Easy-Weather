@@ -15,7 +15,7 @@ const CurrentWeatherDetails = (props) => {
       <div class="details">
         High:  {(currentForecastDay.maxtemp_f).toFixed()}°F 
         <span class='pipe'> | </span> 
-        <span>  {(currentForecastDay.maxtemp_f).toFixed()}°C</span>
+        <span>  {(currentForecastDay.maxtemp_c).toFixed()}°C</span>
       </div> 
       <div class="details" >
         Feels like:  {(props.current.feelslike_f).toFixed()}°F 
