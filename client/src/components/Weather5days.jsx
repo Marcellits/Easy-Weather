@@ -1,29 +1,42 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import {Container, Row, Col, Card } from 'react-bootstrap';
-// import Moment from 'moment';
+import React from 'react';
+import {Container, Col, Row, Card } from 'react-bootstrap';
+import moment from 'moment';
+import '../assets/styles/Weather5Days.css'
 
 const Weather5Days = (props) => {
-    
-    
+    const dayMap={
+        0:'Sunday',
+        1:'Monday',
+        2:'Tuesday',
+        3:'Wednesday',
+        4:'Thursday',
+        5:'Friday',
+        6:'Saturday',  
+    }
     return (
         <Container>
-            <Row>
                 {props.forecast.forecastday.map((item, key) => {
+                    const dayNumber = moment(item.date).day()
                     return (
                     <Col key={key}>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Img variant="top" src={item.day.condition.icon} style={{width:'3rem', display: 'center'}}/>
+                        <Card id="card" >
+                            <Card.Img variant="top" src={item.day.condition.icon} style={{padding:'15px'}}/>
                             <Card.Body>
-                                <Card.Title>{item.date}</Card.Title>
-                                <Card.Text>min: {item.day.mintemp_f} °F   max: {item.day.maxtemp_f} °F</Card.Text>
+                                <Card.Title 
+                                    style={{textAlign:'center', 
+                                    fontSize:'17px'
+                                    }}> 
+                                    {(dayMap[dayNumber])}
+                                </Card.Title>
+                                <Card.Text>
+                                    <Row>min: {(item.day.mintemp_f).toFixed(0)} °F</Row>   
+                                    <Row>max: {(item.day.maxtemp_f).toFixed(0)} °F</Row>      
+                                </Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
-                    
                     )
                 })}               
-            </Row>
         </Container>
     )
 }

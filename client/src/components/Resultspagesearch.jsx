@@ -1,7 +1,5 @@
 import React, { useState} from 'react';
-import { Button } from 'react-bootstrap';
-
-
+import { Button} from 'react-bootstrap';
 
 
 const Resultspagesearch = (props) => {
@@ -12,20 +10,22 @@ const Resultspagesearch = (props) => {
     };
 
     const handleSearch = (e) => {
-        console.log('hi!');
-        e.preventDefault();
-        props.history.push(`/weather/${searchTerm}`);
-      };
-    return ( 
-    <form onSubmit={handleSearch}>
-        <input style={{width: '40vw', borderRadius: '15px'}}
-          type="text"
-          placeholder=" Search for a City, Address, or Zip Code"
-          onChange={handleChange}
-        />
-        <Button class="button" type="submit" style={{marginLeft: '2vw', borderRadius: '15px'}}>Search</Button>   
-      </form>)
-
+      console.log('hi!');
+      e.preventDefault();
+      props.history.push(`/weather/${searchTerm}`);
+    };
+      return ( 
+        <form onSubmit={handleSearch}>
+            <input style={{width: '40vw', borderRadius: '15px'}}
+              type="text"
+              placeholder=" Search for a City, Address, or Zip Code"
+              onChange={handleChange}
+            />
+            <Button style={{marginLeft: '2vw', borderRadius: '15px'}}
+              class="button"
+              type="submit">Search
+            </Button>   
+        </form>)
 }
 
 export default Resultspagesearch
