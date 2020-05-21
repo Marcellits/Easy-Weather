@@ -1,0 +1,19 @@
+#card{
+    width: 12rem;
+    background: url('../images/clouds.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color:#fefeff ;
+    opacity:100%;
+    border: #eaebef ;
+    border-radius: 0.8rem;
+    padding: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.397)
+}
+
+.card-body{
+    margin-top: 1.2rem;
+    margin-bottom:-1rem;
+    color:#454545;
+    text-align:center;
+}

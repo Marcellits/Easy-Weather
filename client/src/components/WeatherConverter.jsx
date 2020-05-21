@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
+
   const WeatherConverter = (props) => {
     const [currentWeatherDetails, setCurrentWeatherDetails] = useState('f');
     const temperature =
@@ -7,22 +8,29 @@ import {useState} from 'react'
     const setToF = () => setCurrentWeatherDetails('f');
     const setToC = () => setCurrentWeatherDetails('c');
     return (
-      <div style={{}}>
-        <div style={{}}>{temperature}</div>
+      <div style={{marginLeft:'15vw'}}>
         <span
           className={`${currentWeatherDetails === 'f' ? 'activeUnit' : ''}`}
           onClick={setToF}
-          style={{}}
+          style={{fontSize:'25px'}}
         >
-          °F{' '}
+          <span class='hover-weather-unit'>  °F  </span>{' '}
         </span>
         <span
           className={`${currentWeatherDetails === 'c' ? 'activeUnit' : ''}`}
           onClick={setToC}
-          style={{}}
+          style={{fontSize:'25px'}}
         >
-          °C{' '}
+          <span class='hover-weather-unit'>  °C </span>{' '}
         </span>
+        <div style={{
+          fontSize:'100px', 
+          border: "#bbbcc0  solid", 
+          padding:'60px', 
+          textAlign:"center"
+          }}>
+          {(temperature).toFixed()}°
+        </div>
       </div>
     );
   };

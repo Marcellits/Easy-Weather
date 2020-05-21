@@ -10,18 +10,18 @@ div.welcomeMessage {
 } 
 
 .typewriter {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid white; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
+    overflow: hidden; 
+    border-right: .15em solid white; 
+    white-space: nowrap; 
     padding-left: 175px;
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
+    margin: 0 auto; 
+    letter-spacing: .15em;
     animation: 
       typing 5s steps(40, end),
       blink-caret .75s step-end infinite;
     animation-iteration-count: infinite;
   }
-  /* The typing effect */
+  
   @keyframes typing {
     0% {
       width: 0
@@ -30,7 +30,7 @@ div.welcomeMessage {
       width: 100%
     }
   }
-  /* The typewriter cursor effect */
+  
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: white; }
@@ -44,17 +44,14 @@ body {
 }
 
 div.logo {
-
-text-align: center;
-border-style: solid;
-border-width: auto;
-border-color: #45BBED;
-background-color: #45BBED;
-display: flex;
-justify-content: center;
-align-items: center;
-
-
+  text-align: center;
+  border-style: solid;
+  border-width: auto;
+  border-color: #45BBED;
+  background-color: #45BBED;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 div.searchbutton {

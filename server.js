@@ -18,17 +18,15 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-
-// JUST FOR DEMO PURPOSES, PUT YOUR ACTUAL API CODE HERE
 app.get('/api/demo', (request, response) => {
   response.json({
     message: 'Hello from server.js'
   });
 });
-// END DEMO
+
 
 app.get('/city/:city', async (req, res) => {
-  // key=${process.env.API_KEY}
+
   let { data } = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.API_KEY}&q=${req.params.city}&days=5`);
 
  

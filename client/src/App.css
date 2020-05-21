@@ -1,11 +1,4 @@
-/* JUST FOR DEMO PURPORSES, REPLACE WITH YOUR OWN CODE */
-
-#demo {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+body{
+  background: url('../src/assets/images/beautiful-clouds-cloudy-dramatic-209831.jpg') center center no-repeat fixed;
+  background-size: cover;
 }
-
-/* END DEMO */

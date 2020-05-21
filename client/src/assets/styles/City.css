@@ -1,0 +1,38 @@
+#box-middle{
+  background:#1b1b1f;
+  width: 100%;
+  margin-top: 2rem;
+  opacity: 80%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.397);
+}
+
+#box-bottom{
+  padding: 40px;
+  width: 90%;
+  margin: auto; 
+}
+
+#searchForm-cityPage {
+  text-align:'center';
+  width: 40vw;
+}
+
+
+.hover-weather-unit:hover{
+  background-color:#eaebef ;
+  color:#454545;
+  border-radius:20%; 
+}
+
+.container{
+  margin: 4rem center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#box-current-weather{
+  font-size: 90px;
+  border: #bbbcc0  solid; 
+  padding:60px;
+}
